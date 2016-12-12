@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<include file="helloword.xml" />
+	
+	<!-- 这个是制定感叹号的方式 不推荐    value="true"-->
+	<!-- 访问如  localhost:8080/strutsTest/helloWord!update.action   -->
+	<constant name="struts.endble.DynamicMethodInvocation" value="false" />
+	
+	<!-- 配置请求的后缀 -->
+	<constant name="struts.action.extension" value="action,do,html" />
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- 设置struts2 的模式为开发模式，有事在开发过程中，可以将错误信息显示到控制台上，还有自动加载struts的配置文件 -->
+	<!-- <constant name="struts.devMode" value="true"></constant>
+	<package name="person" namespace="/person" extends="struts-default">
+		配置访问的URL跳转的Action类和对应的返回页面
+		这个  class="personAction" 是由 spring创建的
+		<action name="personAction_*" class="personAction" method="{1}">
+			<result name="success">/success.jsp</result>
+		</action>
+	</package> -->
+	
+</struts>

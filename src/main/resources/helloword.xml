@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+		<default-action-ref name="index" />
+		<action name="index">
+			<result>/error.jsp</result>
+		</action>
+		
+		<action name="helloWordAction_*" method="{1}" class="com.imooc.action.HelloWordAction">
+			<!-- 如果这里什么都不指定，那么它默认就是SUCCESS -->
+			<result>/result.jsp</result>
+			<result name="add">/{1}.jsp</result>
+			<!-- http://localhost:8080/strutsTest/helloWordAction_update.action -->
+			<result name="update">/update.jsp</result>
+		</action>
+		<!-- 这种是有多个方法 多种配置的使用 不推荐 -->
+		<action name="addAction" method="add" class="com.imooc.action.HelloWordAction">
+			<!-- 如果这里什么都不指定，那么它默认就是SUCCESS -->
+			<result>/result.jsp</result>
+		</action>
+		
+		
+		<action name="loginAction" method="login" class="com.imooc.action.LoginAction">
+			<result>/success.jsp</result>
+		</action>
+	</package>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+</struts>
